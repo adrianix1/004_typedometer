@@ -40,7 +40,7 @@ def timer():
 def check(event: Event = None) -> None:
     global words_correct
     text_input = text_field.get("0.0", "end").split()[-1]
-    if text_input == random_word[words_correct]:
+    if text_input.lower() == random_word[words_correct]:
         words_correct += 1
         if words_correct <= 4:
             canvas2.itemconfigure(words_typed, text=random_word[0:words_correct], fill=GREEN)
